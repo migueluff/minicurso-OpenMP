@@ -18,6 +18,12 @@ float square(int x){
 }
 
 
+void show_vector(int *v, int size) {
+	for(int i =0; i < size; i++){
+			printf("%d ", v[i]);
+		}
+
+}
 int main(int argc, char **argv) {
 	srand(time(NULL));
 	
@@ -30,6 +36,7 @@ int main(int argc, char **argv) {
 	  vetor[i] = square(vetor[i]);
 	}
 	  
-
+	show_vector(vetor, size);
+	
 	return 0;
 }

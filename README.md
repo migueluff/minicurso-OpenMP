@@ -6,7 +6,7 @@ Este minicurso aborda os conceitos básicos do OpenMP utilizando a linguagem C/C
 
 ## Versioning
 
-versão 3.0 - 2020
+versão 4.0 - 2024
 
 ## Original Authors
 
