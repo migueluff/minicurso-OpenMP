@@ -1,4 +1,4 @@
 scripts/
 .dropbox
 output
-source_code/openmp/
+/source_code/openmp
