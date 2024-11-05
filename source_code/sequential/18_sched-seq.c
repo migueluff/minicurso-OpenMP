@@ -12,14 +12,13 @@ void inicializa(int **v, int size) {
 }
 
 int main(int argc, char **argv) {
-    // adicionar um valor fixo a todas as posições de um vetor
      
 	srand(time(NULL));
     int *vetor;
     int size = 100000000;
     inicializa(&vetor, size);
     
-	int k = 15; // valor aleatório
+	int k = 15; // valor aleatÃ³rio
 	for (int i = 0; i < size; i++) {
 		vetor[i] += k;
 	}

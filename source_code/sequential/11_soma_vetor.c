@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     unsigned long acc = 0;
 
-    //#pragma omp parallel for
+    #pragma omp parallel for reduction(+:acc)
     for (int i = 0; i < size; i++) {
         acc += vetor[i];
     }

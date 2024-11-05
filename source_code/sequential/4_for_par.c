@@ -31,25 +31,12 @@ int main(int argc, char **argv) {
 	int size = 1000000;
 
 	inicializa(&vetor, size);
-	printf("Numero de processadores: %d\n", omp_get_num_procs());
-	omp_set_num_threads(8);
-	#pragma omp parallel
-	{
-		int chuck_size, local_init, local_end;
-		chuck_size = size / omp_get_num_threads();
-
-		local_init = chuck_size * omp_get_thread_num();
-		local_end = (omp_get_thread_num() + 1) * chuck_size;
-
-		if ( (omp_get_num_threads()-1) == omp_get_thread_num()) local_end = size;
-
-		for(int i = 0; i < size; i++){
-			vetor[i] = square(vetor[i]);
-		}
-	}
 	
-	  
-	//show_vector(vetor, size);
+    omp_set_num_threads(20);
+	#pragma omp parallel for
+    for(int i = 0; i < size; i++){
+        vetor[i] = square(vetor[i]);
+    }
 	
 	return 0;
 }
