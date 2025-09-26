@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <omp.h>
+
 
 void inicializa(int **v, int size) {
   (*v) = (int *) malloc(sizeof(int)*size);
@@ -18,12 +18,6 @@ float square(int x){
 }
 
 
-void show_vector(int *v, int size) {
-	for(int i =0; i < size; i++){
-			printf("%d ", v[i]);
-		}
-
-}
 int main(int argc, char **argv) {
 	srand(time(NULL));
 	
@@ -31,12 +25,11 @@ int main(int argc, char **argv) {
 	int size = 1000000;
 
 	inicializa(&vetor, size);
-	
-    omp_set_num_threads(20);
-	#pragma omp parallel for
-    for(int i = 0; i < size; i++){
-        vetor[i] = square(vetor[i]);
-    }
-	
+	  
+	for(int i = 0; i < size; i++){
+	  vetor[i] = square(vetor[i]);
+	}
+	  
+
 	return 0;
 }
